@@ -1,17 +1,10 @@
-<%-- 
-    Document   : inicioSesion
-    Created on : 19/11/2021, 10:02:13 AM
-    Author     : 15-dk0007la
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<section id="actions" class="bg-light">
+    <div class="container">
+        <div>
+            <div>  
+                <a class="btn btn-dark" href="${pageContext.request.contextPath}/ServletControladorInicio" role="button">Ingresar</a>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
