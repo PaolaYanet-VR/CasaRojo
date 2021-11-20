@@ -1,17 +1,19 @@
-<%-- 
-    Document   : menu
-    Created on : 19/11/2021, 10:03:24 AM
-    Author     : 15-dk0007la
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<section id="actions" class="bg-light">
+    <div class="container">
+        <div>
+            <div>  
+                <a class="btn btn-dark" href="${pageContext.request.contextPath}/ServletControladorInventario" role="button">INVENTARIO</a>
+            </div><br>
+            <div>  
+                <a class="btn btn-dark" href="${pageContext.request.contextPath}/ServletControladorCompra" role="button">COMPRAS</a>
+            </div><br>
+            <div>  
+                <a class="btn btn-dark" href="${pageContext.request.contextPath}/ServletControladorVenta" role="button">VENTAS</a>
+            </div><br>
+            <div>  
+                <a class="btn btn-dark" href="${pageContext.request.contextPath}/ServletControladorGanancia" role="button">GANANCIAS</a>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
