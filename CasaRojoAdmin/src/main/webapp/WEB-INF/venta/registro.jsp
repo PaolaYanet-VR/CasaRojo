@@ -3,13 +3,13 @@
         <form>
             <div class="container"><br>
                 <label style="font-size: 25px">Producto</label><br>
-                    <select style="width:auto;" class="form-select" aria-label="Default select example">
+                    <select style="width:1110px; height: 40px;" class="form-select" aria-label="Default select example">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
-            </div>
+            </div><br>
             <div class="container">
                 <div class="row">
                     <div class="col">
