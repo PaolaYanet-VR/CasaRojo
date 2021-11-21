@@ -5,7 +5,7 @@
                 <h1 style="text-align: center">Registro de Compra</h1><br>
                 <label style="font-size: 25px">Producto</label><br>
                 <input type="text" class="form-control" name="producto" required>
-            </div>
+            </div><br>
             <div class="container">
                 <div class="row">
                     <div class="col">
