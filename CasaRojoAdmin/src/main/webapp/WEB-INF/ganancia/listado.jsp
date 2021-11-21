@@ -23,13 +23,13 @@
                                 <br>
                                 <br>
                                 <div>
-                                    <select style="width:170px; height: 50px; background-color: black; color: white; font-size: 20px"> 
-                                        <option value="0">Seleccione año</option>
+                                    <select style="width:170px; height: 50px;" class="form-select" aria-label="Default select example">
+                                        <option selected>Seleccione mes</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
-                                        <option value="5">5</option>
                                         <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                                 <br>
@@ -40,8 +40,8 @@
                         <tr>
                             <td>
                                 <div>
-                                    <select style="width:170px; height: 50px; background-color: black; color: white; font-size: 20px">
-                                        <option value="0">Seleccione mes</option>
+                                    <select style="width:170px; height: 50px;" class="form-select" aria-label="Default select example">
+                                        <option selected>Seleccione mes</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -54,31 +54,22 @@
                     </table>
                 </td>
                 <td>
-                    <table>
+                   <table class="table table-dark table-striped">
+                    <thead>
                         <tr>
-                            <td style="background-color: black; width: 240px; text-align: center">
-                                <span style="color: #ffffff; font-size: 20px">INVERTIDO</span>
-                            </td>
-                            <td style="background-color: black; width: 240px; text-align: center">
-                                <span style="color: #ffffff; font-size: 20px">GANADO</span> 
-                            </td>
+                          <th scope="col">INVERTIDO</th>
+                          <th scope="col">GANADO</th>
                         </tr>
-                        <tr>
-                            <td style="border-color: black; width: 240px; text-align: center">
-                                <span style="font-size: 20px">INVERTIDO</span>
-                            </td>
-                            <td style="border-color: black; width: 240px; text-align: center">
-                                <span style="font-size: 20px">GANADO</span> 
-                            </td>
-                        </tr>
-                    </table>
+                    </thead>
+                    <tbody>
+                     <tr>
+                       <th scope="row">1000</th>
+                       <td>1200</td>
+                     </tr>
+                   </tbody>
+                  </table>
                 </td>
             </tr>
-        </table>
-        
-        
-        <table>
-            
         </table>
     </body>
 </html>
