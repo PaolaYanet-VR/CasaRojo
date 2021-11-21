@@ -1,8 +1,7 @@
-<section id="actions" class="bg-light">
+<section id="actions">
     <div class="container">
         <form>
             <div class="container"><br>
-                <h1 style="text-align: center">Registro de Venta</h1><br>
                 <label style="font-size: 25px">Producto</label><br>
                     <select style="width:auto;" class="form-select" aria-label="Default select example">
                     <option selected>Open this select menu</option>

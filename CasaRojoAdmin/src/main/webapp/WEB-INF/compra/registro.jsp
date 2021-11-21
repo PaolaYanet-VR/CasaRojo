@@ -1,8 +1,7 @@
-<section id="actions" class="bg-light">
+<section id="actions">
     <div class="container">
         <form>
             <div class="container-fluid"><br>
-                <h1 style="text-align: center">Registro de Compra</h1><br>
                 <label style="font-size: 25px">Producto</label><br>
                 <input type="text" class="form-control" name="producto" required>
             </div>

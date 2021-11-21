@@ -17,6 +17,10 @@
         <title>Casa Rojo</title>
     </head>
     <body>
+        
+        <!--Cabecero-->
+        <jsp:include page="/WEB-INF/generales/botonRegresarInicio.jsp"/>
+        <jsp:include page="/WEB-INF/inventario/encabezado.jsp"/>
 
         <!--Tabla inventario-->
         <jsp:include page="/WEB-INF/inventario/tabla.jsp"/>

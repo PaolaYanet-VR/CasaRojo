@@ -1,17 +1,7 @@
-<%-- 
-    Document   : botonRegresarInicio
-    Created on : 19/11/2021, 10:06:12 AM
-    Author     : 15-dk0007la
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<section id="actions">
+    <div style="margin: 25px">
+        <a href="${pageContext.request.contextPath}/ServletControladorInicio">
+            <img src="${pageContext.request.contextPath}/CR_Logo2.png" href="${pageContext.request.contextPath}/ServletControladorInicio" style="width:80px; height:80px;">
+        </a>
+    </div>
+</section>
