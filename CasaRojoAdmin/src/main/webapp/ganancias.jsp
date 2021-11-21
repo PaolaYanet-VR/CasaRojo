@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ganancias
-    Created on : 19/11/2021, 04:59:49 PM
-    Author     : 15-dk0007la
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +6,6 @@
         <title>GANANCIAS</title>
     </head>
     <body>
-        <h1>TUMBA LA KZA MAMEH</h1>
+        <jsp:include page="/WEB-INF/ganancia/listado.jsp"/>
     </body>
 </html>

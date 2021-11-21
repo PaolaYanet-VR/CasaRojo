@@ -1,8 +1,3 @@
-<%-- 
-    Document   : opciones
-    Created on : 19/11/2021, 04:58:49 PM
-    Author     : 15-dk0007la
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
