@@ -1,16 +1,7 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <style>
-        
-    </style>
-    <body>
-        <table>
+<section>
+    <div class="container-fluid"  style="padding:50px;">
+  <table>
             <tr>
                 <td style="width:350px">
                     <table>
@@ -18,13 +9,9 @@
                             <td>
                                 <br>
                                 <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
                                 <div>
-                                    <select style="width:170px; height: 50px;" class="form-select" aria-label="Default select example">
-                                        <option selected>Seleccione mes</option>
+                                    <select style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
+                                        <option selected>AÑO</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -33,15 +20,13 @@
                                     </select>
                                 </div>
                                 <br>
-                                <br>
-                                <br>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div>
-                                    <select style="width:170px; height: 50px;" class="form-select" aria-label="Default select example">
-                                        <option selected>Seleccione mes</option>
+                                    <select style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
+                                        <option selected>MES</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -54,16 +39,19 @@
                     </table>
                 </td>
                 <td>
+                    
+                                <br>
+                                <br>
                    <table class="table table-dark table-striped">
                     <thead>
                         <tr>
-                          <th scope="col">INVERTIDO</th>
-                          <th scope="col">GANADO</th>
+                            <th scope="col" style="width: 600px">INVERTIDO</th>
+                          <th scope="col" style="width: 600px">GANADO</th>
                         </tr>
                     </thead>
                     <tbody>
                      <tr>
-                       <th scope="row">1000</th>
+                       <th scope="row" style="width: 600px">1000</th>
                        <td>1200</td>
                      </tr>
                    </tbody>
@@ -71,5 +59,5 @@
                 </td>
             </tr>
         </table>
-    </body>
-</html>
+        </div>
+</section>
