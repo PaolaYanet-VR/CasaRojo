@@ -51,7 +51,7 @@
                     </thead>
                     <tbody>
                      <tr>
-                       <th scope="row" style="width: 600px">1000</th>
+                       <th>1000</th>
                        <td>1200</td>
                      </tr>
                    </tbody>
