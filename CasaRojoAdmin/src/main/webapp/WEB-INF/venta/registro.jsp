@@ -6,7 +6,11 @@
                 <label style="font-size: 25px" for="producto">Producto</label><br>
                     <select style="width:1110px; height: 40px;" class="form-select" name="producto" aria-label="Default select example">
                         <c:forEach var="producto" items="${productos}">
-                            <option value="${producto.nombreProducto}">${producto.nombreProducto}</option>
+                            <c:choose>
+                                <c:when test="${producto.cantidadProducto > 0}">
+                                    <option value="${producto.nombreProducto}">${producto.nombreProducto}</option>
+                                </c:when>
+                            </c:choose>
                         </c:forEach>
                 </select>
             </div><br>

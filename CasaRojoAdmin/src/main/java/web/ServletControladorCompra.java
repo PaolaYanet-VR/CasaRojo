@@ -24,7 +24,7 @@ public class ServletControladorCompra extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
       
-         this.insertarCompra(request, response);  
+        this.insertarCompra(request, response);  
         
     }
 
@@ -76,6 +76,12 @@ public class ServletControladorCompra extends HttpServlet {
             
             int registrosProducto = new ProductoDaoJDBC().insertar(pr);
             System.out.println("Producto = " + registrosProducto);
+            
+        } else {
+            for(Producto pr2: productos) {
+            if (pr2.getNombreProducto().equals(producto))
+                new ProductoDaoJDBC().actualizar(new Producto(pr2.getIdProducto(),pr2.getNombreProducto(),(pr2.getCantidadProducto() + Cantidad),costo,pr2.getPrecioVenta()));
+            }
         }
         
         //Creamos el objeto de compra (modelo)

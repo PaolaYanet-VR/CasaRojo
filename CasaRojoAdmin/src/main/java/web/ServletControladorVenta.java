@@ -52,15 +52,6 @@ public class ServletControladorVenta extends HttpServlet {
         
         //recuperamos los valores del formulario registroVenta
         
-        String producto = request.getParameter("producto");
-        int idproducto = 0;
-        
-        List<Producto> productos = new ProductoDaoJDBC().listar();
-        for(Producto pr: productos) {
-            if (pr.getNombreProducto().equals(producto))
-                idproducto = pr.getIdProducto();
-        }
-        
         int cantidad = 0;
         String cantidadString = request.getParameter("cantidad");
         if (cantidadString != null && !"".equals(cantidadString)) {
@@ -73,17 +64,32 @@ public class ServletControladorVenta extends HttpServlet {
             costo = Double.parseDouble(costoString);
         }
         
+        String producto = request.getParameter("producto");
+        int idproducto = 0;
         double costo_total = cantidad * costo;
+        
+        List<Producto> productos = new ProductoDaoJDBC().listar();
+        for(Producto pr: productos) {
+            if (pr.getNombreProducto().equals(producto)){
+                idproducto = pr.getIdProducto();
+                
+                if (pr.getCantidadProducto() < cantidad){
+                    this.accionDefault(request, response);
+                } else {
+                    new ProductoDaoJDBC().actualizar(new Producto(pr.getIdProducto(),pr.getNombreProducto(),(pr.getCantidadProducto() - cantidad),costo,pr.getPrecioVenta()));
+                    //Creamos el objeto de venta (modelo)
+                    Venta venta = new Venta(idproducto, cantidad, costo_total);
 
-        //Creamos el objeto de venta (modelo)
-        Venta venta = new Venta(idproducto, cantidad, costo_total);
+                    //Insertamos el nuevo objeto en la base de datos
+                    int registrosModificados = new VentaDaoJDBC().insertarVenta(venta);
+                    System.out.println("registrosModificados = " + registrosModificados);
 
-        //Insertamos el nuevo objeto en la base de datos
-        int registrosModificados = new VentaDaoJDBC().insertarVenta(venta);
-        System.out.println("registrosModificados = " + registrosModificados);
-
-        //Redirigimos hacia accion por default
-        this.accionInsertado(request, response);
+                    //Redirigimos hacia accion por default
+                    this.accionInsertado(request, response);
+                }
+            }            
+        }
+        
     }
 
 }
