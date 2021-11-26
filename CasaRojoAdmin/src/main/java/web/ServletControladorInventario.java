@@ -1,6 +1,9 @@
 package web;
 
+import datos.ProductoDaoJDBC;
+import dominio.Producto;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -21,7 +24,9 @@ public class ServletControladorInventario extends HttpServlet {
     }
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+        List<Producto> productos = new ProductoDaoJDBC().listar();
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("productos", productos);
         request.getRequestDispatcher("inventario.jsp").forward(request, response);
         response.sendRedirect("inventario.jsp");
     }

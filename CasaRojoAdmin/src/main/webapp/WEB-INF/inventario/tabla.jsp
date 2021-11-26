@@ -1,3 +1,6 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="es_MX"/>
 <section>
     <div class="container-fluid"  style="padding:50px;">
  <table class="table table-dark table-striped">
@@ -10,36 +13,14 @@
     </tr>
   </thead>
    <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Frijol</td>
-      <td>3kg</td>
-      <td>$20</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Coca Cola</td>
-      <td>30</td>
-      <td>$16</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Sabritones</td>
-      <td>28</td>
-      <td>$20</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Galletas Maria</td>
-      <td>18</td>
-      <td>$23</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Takis</td>
-      <td>17</td>
-      <td>$12</td>
-    </tr>
+       <c:forEach var="producto" items="${productos}" varStatus="status">
+          <tr>
+            <th scope="row">${status.count}</th>
+            <td>${producto.getNombreProducto()}</td>
+            <td>${producto.getCantidadProducto()}</td>
+            <td>${producto.getPrecioCompra()}</td>
+          </tr> 
+       </c:forEach>
   </tbody>
  </table>
         </div>
