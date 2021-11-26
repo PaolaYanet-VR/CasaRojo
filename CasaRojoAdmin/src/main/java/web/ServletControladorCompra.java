@@ -30,52 +30,52 @@ public class ServletControladorCompra extends HttpServlet {
         
         List<Compra> compras = new CompraDaoJDBC().listar();
         System.out.println("compras = " + compras);
+        request.getRequestDispatcher("compras.jsp").forward(request, response);
+        response.sendRedirect("compras.jsp");
+    }
+    
+    private void accionInsertado(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        List<Compra> ventas = new CompraDaoJDBC().listar();
+        System.out.println("ventas = " + ventas);
         request.getRequestDispatcher("menuInicio.jsp").forward(request, response);
         response.sendRedirect("menuInicio.jsp");
     }
     
      private void insertarCompra(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        boolean bandera = false;
+    
         
-        
-        double total = 0;
+      
         int idProducto = 0;
         String idproducto = request.getParameter("producto");
-        
+          if (idproducto != null && !"".equals(idproducto)) {
+            idProducto = Integer.parseInt(idproducto);
+        }
         
         int Cantidad = 0;
         String cantidad = request.getParameter("cantidad");
-        
+         if (cantidad != null && !"".equals(cantidad)) {
+            Cantidad = Integer.parseInt(cantidad);
+        }
         
         double costo = 0;
         String costoString = request.getParameter("costo");
-        if (costoString != null && !"".equals(costoString) && cantidad!= null && !"".equals(cantidad)&& idproducto!= null && !"".equals(idproducto)) {
-            try{
-            costo = Double.parseDouble(costoString);
-            Cantidad = Integer.parseInt(cantidad);
-            idProducto = Integer.parseInt(idproducto);
-            }
-            catch(Exception e){
-             response.sendRedirect("compras.jsp");
-            }
-             total = costo * Cantidad;
-             bandera = true;
+       if (costoString != null && !"".equals(costoString)) {
+            costo = Integer.parseInt(costoString);
         }
 
+         double costo_total = Cantidad * costo;
         
-       // if(bandera){
-            //Creamos el objeto de compra (modelo)
-            Compra compra = new Compra(idProducto, Cantidad, total);
+       
+                //Creamos el objeto de compra (modelo)
+                Compra compra = new Compra(idProducto, Cantidad, costo_total);
 
                 //Insertamos el nuevo objeto en la base de datos
                 new CompraDaoJDBC().insertar(compra);
 
                 //Redirigimos hacia accion RetornarPaginaCompra
-                this.accionDefault(request, response);
-//        }else{
-//            response.sendRedirect("compras.jsp");
-//        }
+                this.accionInsertado(request, response);
         
         
     }
