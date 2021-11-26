@@ -72,7 +72,7 @@ public class ServletControladorCompra extends HttpServlet {
         double costo_total = Cantidad * costo;
         
         Producto pr = new Producto(idproducto, producto, Cantidad, costo, costo);
-        if (idproducto == 0){
+        if (idproducto < 1){
             
             int registrosProducto = new ProductoDaoJDBC().insertar(pr);
             System.out.println("Producto = " + registrosProducto);
