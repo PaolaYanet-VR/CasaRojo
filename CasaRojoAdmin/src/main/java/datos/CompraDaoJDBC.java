@@ -29,12 +29,11 @@ public class CompraDaoJDBC {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int idCompra = rs.getInt("idcompra");
                 int idProducto = rs.getInt("idproducto");
                 int cantidad = rs.getInt("cantidad");
                 double precioTotal = rs.getDouble("precio_total");
 
-                compra = new Compra(idCompra, idProducto, cantidad, precioTotal);
+                compra = new Compra(idProducto, cantidad, precioTotal);
                 compras.add(compra);
             }
         } catch (SQLException ex) {

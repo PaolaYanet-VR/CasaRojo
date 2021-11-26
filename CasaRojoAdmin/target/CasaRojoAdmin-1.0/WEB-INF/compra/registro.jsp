@@ -1,6 +1,7 @@
 <section id="actions">
     <div class="container">
-        <form>
+        <form action="${pageContext.request.contextPath}/ServletControladorCompras?accionCompra=insertarCompra"
+                  method="POST" >
             <div class="container-fluid"><br>
                 <label style="font-size: 25px">Producto</label><br>
                 <input type="text" class="form-control" name="producto" required>

@@ -11,8 +11,7 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public Compra(int idCompra, int idProducto, int cantidad, double precioTotal) {
-        this.idCompra = idCompra;
+    public Compra(int idProducto, int cantidad, double precioTotal) {
         this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.precioTotal = precioTotal;
