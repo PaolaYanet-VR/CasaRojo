@@ -1,6 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section id="actions">
     <div class="container">
-        <form action="${pageContext.request.contextPath}/ServletControladorCompras?accionCompra=insertarCompra"
+        <form action="${pageContext.request.contextPath}/ServletControladorCompra?accionCompra=insertarCompra"
                   method="POST" >
             <div class="container-fluid"><br>
                 <label style="font-size: 25px">Producto</label><br>

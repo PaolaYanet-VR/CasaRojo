@@ -30,6 +30,7 @@ public class ServletControladorVenta extends HttpServlet {
         List<Venta> ventas = new VentaDaoJDBC().listaventas();
         System.out.println("ventas = " + ventas);
         
+        // para el select producto
         HttpSession sesion = request.getSession();
         List<Producto> productos = new ProductoDaoJDBC().listar();
         sesion.setAttribute("productos", productos);

@@ -29,11 +29,12 @@ public class CompraDaoJDBC {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
+                int idCompra = rs.getInt("idcompra");
                 int idProducto = rs.getInt("idproducto");
-                int cantidad = rs.getInt("cantidad");
-                double precioTotal = rs.getDouble("precio_total");
+                int Cantidad = rs.getInt("cantidad");
+                double Precio_Total = rs.getDouble("precio_total");
 
-                compra = new Compra(idProducto, cantidad, precioTotal);
+                compra = new Compra(idCompra, idProducto, Cantidad, Precio_Total);
                 compras.add(compra);
             }
         } catch (SQLException ex) {
@@ -46,37 +47,6 @@ public class CompraDaoJDBC {
         return compras;
     }
     
-    public Compra encontrar(Compra compra) {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        try {
-            conn = Conexion.getConnection();
-            stmt = conn.prepareStatement(SQL_SELECT_BY_ID);
-            stmt.setInt(1, compra.getIdCompra());
-            rs = stmt.executeQuery();
-            rs.absolute(1);//nos posicionamos en el primer registro devuelto
-
-            int idCompra = rs.getInt("idcompra");
-            int idProducto = rs.getInt("idproducto");
-            int cantidad = rs.getInt("cantidad");
-            double precioTotal = rs.getDouble("precio_total");
-            
-            compra.setIdCompra(idCompra);
-            compra.setIdProducto(idProducto);
-            compra.setCantidad(cantidad);
-            compra.setPrecioTotal(precioTotal);
-
-        } catch (SQLException ex) {
-            ex.printStackTrace(System.out);
-        } finally {
-            Conexion.close(rs);
-            Conexion.close(stmt);
-            Conexion.close(conn);
-        }
-        return compra;
-    }
-    
     public int insertar(Compra compra) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -86,7 +56,7 @@ public class CompraDaoJDBC {
             stmt = conn.prepareStatement(SQL_INSERT);
             stmt.setInt(1, compra.getIdProducto());
             stmt.setInt(2, compra.getCantidad());
-            stmt.setDouble(3, compra.getPrecioTotal());
+            stmt.setDouble(3, compra.getPrecio_Total());
 
             rows = stmt.executeUpdate();
         } catch (SQLException ex) {

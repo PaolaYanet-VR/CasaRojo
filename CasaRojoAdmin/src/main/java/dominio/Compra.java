@@ -4,20 +4,29 @@ package dominio;
 public class Compra {
     private int idCompra;
     private int idProducto;
-    private int cantidad;
-    private double precioTotal;
+    private int Cantidad;
+    private double Precio_Total;
 
+    //eliminar
     public Compra(int idCompra) {
         this.idCompra = idCompra;
     }
 
+    //Agregar
     public Compra(int idProducto, int cantidad, double precioTotal) {
         this.idProducto = idProducto;
-        this.cantidad = cantidad;
-        this.precioTotal = precioTotal;
+        this.Cantidad = cantidad;
+        this.Precio_Total = precioTotal;
+    }
+
+    public Compra(int idCompra, int idProducto, int Cantidad, double Precio_Total) {
+        this.idCompra = idCompra;
+        this.idProducto = idProducto;
+        this.Cantidad = Cantidad;
+        this.Precio_Total = Precio_Total;
     }
     
-
+    // Getters and Setters
     public int getIdCompra() {
         return idCompra;
     }
@@ -35,31 +44,24 @@ public class Compra {
     }
 
     public int getCantidad() {
-        return cantidad;
+        return Cantidad;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setCantidad(int Cantidad) {
+        this.Cantidad = Cantidad;
     }
 
-    public double getPrecioTotal() {
-        return precioTotal;
+    public double getPrecio_Total() {
+        return Precio_Total;
     }
 
-    public void setPrecioTotal(double precioTotal) {
-        this.precioTotal = precioTotal;
+    public void setPrecio_Total(double Precio_Total) {
+        this.Precio_Total = Precio_Total;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Compra{idCompra=").append(idCompra);
-        sb.append(", idProducto=").append(idProducto);
-        sb.append(", cantidad=").append(cantidad);
-        sb.append(", precioTotal=").append(precioTotal);
-        sb.append('}');
-        return sb.toString();
+        return "Compra{" + "idCompra=" + idCompra + ", idProducto=" + idProducto + ", Cantidad=" + Cantidad + ", Precio_Total=" + Precio_Total + '}';
     }
-    
     
 }

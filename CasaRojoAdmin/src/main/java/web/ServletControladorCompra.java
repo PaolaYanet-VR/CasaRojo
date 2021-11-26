@@ -30,22 +30,21 @@ public class ServletControladorCompra extends HttpServlet {
         
         List<Compra> compras = new CompraDaoJDBC().listar();
         System.out.println("compras = " + compras);
+        
         request.getRequestDispatcher("compras.jsp").forward(request, response);
         response.sendRedirect("compras.jsp");
     }
     
     private void accionInsertado(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        List<Compra> ventas = new CompraDaoJDBC().listar();
-        System.out.println("ventas = " + ventas);
+        List<Compra> compras = new CompraDaoJDBC().listar();
+        System.out.println("compras = " + compras);
         request.getRequestDispatcher("menuInicio.jsp").forward(request, response);
         response.sendRedirect("menuInicio.jsp");
     }
     
      private void insertarCompra(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
-        
       
         int idProducto = 0;
         String idproducto = request.getParameter("producto");
@@ -72,7 +71,8 @@ public class ServletControladorCompra extends HttpServlet {
                 Compra compra = new Compra(idProducto, Cantidad, costo_total);
 
                 //Insertamos el nuevo objeto en la base de datos
-                new CompraDaoJDBC().insertar(compra);
+                int registrosModificados = new CompraDaoJDBC().insertar(compra);
+                System.out.println("registrosModificados = " + registrosModificados);
 
                 //Redirigimos hacia accion RetornarPaginaCompra
                 this.accionInsertado(request, response);
