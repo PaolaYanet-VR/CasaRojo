@@ -1,7 +1,9 @@
 package web;
 
 import datos.CompraDaoJDBC;
+import datos.ProductoDaoJDBC;
 import dominio.Compra;
+import dominio.Producto;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -45,11 +47,14 @@ public class ServletControladorCompra extends HttpServlet {
     
      private void insertarCompra(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
-        int idProducto = 0;
-        String idproducto = request.getParameter("producto");
-          if (idproducto != null && !"".equals(idproducto)) {
-            idProducto = Integer.parseInt(idproducto);
+         
+        String producto = request.getParameter("producto");
+        int idproducto = 0;
+        
+        List<Producto> productos = new ProductoDaoJDBC().listar();
+        for(Producto pr: productos) {
+            if (pr.getNombreProducto().equals(producto))
+                idproducto = pr.getIdProducto();
         }
         
         int Cantidad = 0;
@@ -60,23 +65,28 @@ public class ServletControladorCompra extends HttpServlet {
         
         double costo = 0;
         String costoString = request.getParameter("costo");
-       if (costoString != null && !"".equals(costoString)) {
+        if (costoString != null && !"".equals(costoString)) {
             costo = Integer.parseInt(costoString);
         }
-
-         double costo_total = Cantidad * costo;
         
-       
-                //Creamos el objeto de compra (modelo)
-                Compra compra = new Compra(idProducto, Cantidad, costo_total);
-
-                //Insertamos el nuevo objeto en la base de datos
-                int registrosModificados = new CompraDaoJDBC().insertar(compra);
-                System.out.println("registrosModificados = " + registrosModificados);
-
-                //Redirigimos hacia accion RetornarPaginaCompra
-                this.accionInsertado(request, response);
+        double costo_total = Cantidad * costo;
         
+        Producto pr = new Producto(idproducto, producto, Cantidad, costo, costo);
+        if (idproducto == 0){
+            
+            int registrosProducto = new ProductoDaoJDBC().insertar(pr);
+            System.out.println("Producto = " + registrosProducto);
+        }
+        
+        //Creamos el objeto de compra (modelo)
+        Compra compra = new Compra(idproducto, Cantidad, costo_total);
+        
+        //Insertamos el nuevo objeto en la base de datos
+        int registrosModificados = new CompraDaoJDBC().insertar(compra);
+        System.out.println("registrosModificados = " + registrosModificados);
+        
+        //Redirigimos hacia accion RetornarPaginaCompra
+        this.accionInsertado(request, response);
         
     }
 
