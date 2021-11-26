@@ -30,10 +30,9 @@ public class ServletControladorVenta extends HttpServlet {
         List<Venta> ventas = new VentaDaoJDBC().listaventas();
         System.out.println("ventas = " + ventas);
         
+        HttpSession sesion = request.getSession();
         List<Producto> productos = new ProductoDaoJDBC().listar();
-        for(Producto producto: productos) {
-            
-        }
+        sesion.setAttribute("productos", productos);
         
         request.getRequestDispatcher("ventas.jsp").forward(request, response);
         response.sendRedirect("ventas.jsp");
@@ -53,13 +52,12 @@ public class ServletControladorVenta extends HttpServlet {
         //recuperamos los valores del formulario registroVenta
         
         String producto = request.getParameter("producto");
+        int idproducto = 0;
         
         List<Producto> productos = new ProductoDaoJDBC().listar();
-        
-        int idproducto = 0;
-        String idproductoString = request.getParameter("idproducto");
-        if (idproductoString != null && !"".equals(idproductoString)) {
-            idproducto = Integer.parseInt(idproductoString);
+        for(Producto pr: productos) {
+            if (pr.getNombreProducto().equals(producto))
+                idproducto = pr.getIdProducto();
         }
         
         int cantidad = 0;

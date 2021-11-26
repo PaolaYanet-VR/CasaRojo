@@ -1,13 +1,13 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section id="actions">
     <div class="container">
         <form method="POST" action="${pageContext.request.contextPath}/ServletControladorVenta?accion=insertar">
             <div class="container"><br>
                 <label style="font-size: 25px" for="producto">Producto</label><br>
                     <select style="width:1110px; height: 40px;" class="form-select" name="producto" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                        <c:forEach var="producto" items="${productos}">
+                            <option value="${producto.nombreProducto}">${producto.nombreProducto}</option>
+                        </c:forEach>
                 </select>
             </div><br>
             <div class="container">
