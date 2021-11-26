@@ -1,23 +1,23 @@
 <section id="actions">
     <div class="container">
-        <form>
+        <form method="POST" action="${pageContext.request.contextPath}/ServletControladorVenta?accion=insertar">
             <div class="container"><br>
-                <label style="font-size: 25px">Producto</label><br>
-                    <select style="width:1110px; height: 40px;" class="form-select" aria-label="Default select example">
+                <label style="font-size: 25px" for="producto">Producto</label><br>
+                    <select style="width:1110px; height: 40px;" class="form-select" name="producto" aria-label="Default select example">
                     <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                 </select>
             </div><br>
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <label style="font-size: 25px">Cantidad</label><br>
+                        <label style="font-size: 25px" for="cantidad">Cantidad</label><br>
                         <input type="number" maxlength="7" class="form-control" name="cantidad" required step="any">
                     </div>
                     <div class="col">
-                        <label style="font-size: 25px">Precio</label><br>
+                        <label style="font-size: 25px" for="costo">Precio</label><br>
                         <input type="number" maxlength="7" class="form-control" name="costo" required step="any">
                     </div>
                 </div>
