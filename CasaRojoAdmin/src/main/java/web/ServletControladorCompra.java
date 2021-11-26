@@ -55,16 +55,16 @@ public class ServletControladorCompra extends HttpServlet {
             costo = Double.parseDouble(costoString);
             Cantidad = Integer.parseInt(cantidad);
             idProducto = Integer.parseInt(idproducto);
-            total = costo * Cantidad;
-            bandera = true;
             }
             catch(Exception e){
              response.sendRedirect("compras.jsp");
             }
+             total = costo * Cantidad;
+             bandera = true;
         }
 
         
-        if(bandera){
+       // if(bandera){
             //Creamos el objeto de compra (modelo)
             Compra compra = new Compra(idProducto, Cantidad, total);
 
@@ -73,9 +73,9 @@ public class ServletControladorCompra extends HttpServlet {
 
                 //Redirigimos hacia accion RetornarPaginaCompra
                 this.accionDefault(request, response);
-        }else{
-            response.sendRedirect("compras.jsp");
-        }
+//        }else{
+//            response.sendRedirect("compras.jsp");
+//        }
         
         
     }
