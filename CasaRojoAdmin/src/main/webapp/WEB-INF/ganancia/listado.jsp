@@ -1,16 +1,7 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <style>
-        
-    </style>
-    <body>
-        <table>
+<section>
+    <div class="container-fluid"  style="padding:50px;">
+  <table>
             <tr>
                 <td style="width:350px">
                     <table>
@@ -18,30 +9,24 @@
                             <td>
                                 <br>
                                 <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
                                 <div>
-                                    <select style="width:170px; height: 50px; background-color: black; color: white; font-size: 20px"> 
-                                        <option value="0">Seleccione a√±o</option>
+                                    <select style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
+                                        <option selected>A—O</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
-                                        <option value="5">5</option>
                                         <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
-                                <br>
-                                <br>
                                 <br>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div>
-                                    <select style="width:170px; height: 50px; background-color: black; color: white; font-size: 20px">
-                                        <option value="0">Seleccione mes</option>
+                                    <select style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
+                                        <option selected>MES</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -54,31 +39,25 @@
                     </table>
                 </td>
                 <td>
-                    <table>
+                    
+                                <br>
+                                <br>
+                   <table class="table table-dark table-striped">
+                    <thead>
                         <tr>
-                            <td style="background-color: black; width: 240px; text-align: center">
-                                <span style="color: #ffffff; font-size: 20px">INVERTIDO</span>
-                            </td>
-                            <td style="background-color: black; width: 240px; text-align: center">
-                                <span style="color: #ffffff; font-size: 20px">GANADO</span> 
-                            </td>
+                            <th scope="col" style="width: 600px">INVERTIDO</th>
+                          <th scope="col" style="width: 600px">GANADO</th>
                         </tr>
-                        <tr>
-                            <td style="border-color: black; width: 240px; text-align: center">
-                                <span style="font-size: 20px">INVERTIDO</span>
-                            </td>
-                            <td style="border-color: black; width: 240px; text-align: center">
-                                <span style="font-size: 20px">GANADO</span> 
-                            </td>
-                        </tr>
-                    </table>
+                    </thead>
+                    <tbody>
+                     <tr>
+                       <th>1000</th>
+                       <td>1200</td>
+                     </tr>
+                   </tbody>
+                  </table>
                 </td>
             </tr>
         </table>
-        
-        
-        <table>
-            
-        </table>
-    </body>
-</html>
+        </div>
+</section>
