@@ -3,7 +3,7 @@
 <fmt:setLocale value="es_MX"/>
 <section>
     <form action="${pageContext.request.contextPath}/ServletControladorGanancia?accionListar=listarCompra"
-          method="GET">
+          method="POST">
     <div class="container-fluid"  style="padding:50px;">
   <table>
             <tr>
@@ -14,7 +14,7 @@
                                 <br>
                                 <br>
                                 <div>
-                                    <select onchange="this.form.submit()" name="year" style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
+                                    <select name="year" style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
                                         <option selected value="2021">2021</option>
                                         <option value="2020">2020</option>
                                         <option value="2019">2019</option>
@@ -28,7 +28,7 @@
                         <tr>
                             <td>
                                 <div>
-                                    <select onchange="this.form.submit()" name="mes" style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
+                                    <select name="mes" style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
                                         <option selected value="1">Enero</option>
                                         <option value="2">Febrero</option>
                                         <option value="3">Marzo</option>
@@ -71,5 +71,6 @@
             </tr>
         </table>
         </div>
+        <button class="btn btn-dark btn-lg btn-block" style="margin-top: 20px; font-size: 25px;" type="submit">Buscar</button>
     </form>
 </section>
