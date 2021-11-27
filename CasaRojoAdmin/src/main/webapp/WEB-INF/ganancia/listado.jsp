@@ -1,4 +1,6 @@
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="es_MX"/>
 <section>
     <div class="container-fluid"  style="padding:50px;">
   <table>
@@ -11,12 +13,12 @@
                                 <br>
                                 <div>
                                     <select style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
-                                        <option selected>AÑO</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
+                                        
+                                        <option selected value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
                                     </select>
                                 </div>
                                 <br>
@@ -26,12 +28,19 @@
                             <td>
                                 <div>
                                     <select style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
-                                        <option selected>MES</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
+                                       
+                                        <option selected value="1">Enero</option>
+                                        <option value="2">Febrero</option>
+                                        <option value="3">Marzo</option>
+                                        <option value="4">Abril</option>
+                                        <option value="5">Mayo</option>
+                                        <option value="6">Junio</option>
+                                        <option value="7">Julio</option>
+                                        <option value="8">Agosto</option>
+                                        <option value="9">Septiembre</option>
+                                        <option value="10">Octubre</option>
+                                        <option value="11">Noviembre</option>
+                                        <option value="12">Diciembre</option>
                                     </select>
                                 </div>
                             </td>
@@ -50,10 +59,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                     <tr>
-                       <th>1000</th>
-                       <td>1200</td>
-                     </tr>
+                        <c:forEach var="ganancia" items="${ganancias}" varStatus="status">
+                         <tr>
+                            <th>${ganancia.getInvertido()}</th>
+                            <td>${ganancia.getGanado()}</td>
+                        </tr>
+                     </c:forEach>
                    </tbody>
                   </table>
                 </td>
