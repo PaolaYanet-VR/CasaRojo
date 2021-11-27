@@ -88,10 +88,9 @@ public class ServletControladorCompra extends HttpServlet {
             }
         }
         
-        //Creamos el objeto de compra (modelo)
         Compra compra = new Compra(idproducto, Cantidad, costo_total);
         
-        //Insertamos el nuevo objeto en la base de datos
+        //Insertamos la compra
         int registrosModificados = new CompraDaoJDBC().insertar(compra);
         System.out.println("registrosModificados = " + registrosModificados);
         
