@@ -14,7 +14,7 @@
         <!-- Libreria de fontawesome -->
         <script src="https://kit.fontawesome.com/bc1817dbc5.js" crossorigin="anonymous"></script>
 
-        <title>Casa Rojo</title>
+        <title>INVENTARIO</title>
     </head>
     <body>
         

@@ -29,7 +29,7 @@
                             <td>
                                 <div>
                                     <select name="mes" style="width:170px; height: 50px; font-size: 20px; text-align: center" class="form-select" aria-label="Default select example">
-                                        <option selected value="1">Enero</option>
+                                        <option value="1">Enero</option>
                                         <option value="2">Febrero</option>
                                         <option value="3">Marzo</option>
                                         <option value="4">Abril</option>
@@ -39,7 +39,7 @@
                                         <option value="8">Agosto</option>
                                         <option value="9">Septiembre</option>
                                         <option value="10">Octubre</option>
-                                        <option value="11">Noviembre</option>
+                                        <option selected value="11">Noviembre</option>
                                         <option value="12">Diciembre</option>
                                     </select>
                                 </div>

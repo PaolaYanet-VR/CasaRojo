@@ -10,7 +10,7 @@
         <!-- Libreria de fontawesome -->
         <script src="https://kit.fontawesome.com/bc1817dbc5.js" crossorigin="anonymous"></script>
 
-        <title>GAANCIAS</title>
+        <title>GANANCIAS</title>
     </head>
     <body>
         

@@ -45,9 +45,9 @@ public class ServletControladorGanancia extends HttpServlet {
         List<Ganancia> ganancias = new GananciaDaoJDBC().listarGanancias();
         List<Ganancia> filtradas = new ArrayList<>();
         String year = "2021";
-        String mes = "1";
+        String mes = "11";
         
-        for (Ganancia ganancia : ganancias){
+        for (Ganancia ganancia : ganancias) {
             if(year.equals(String.valueOf(ganancia.getYear()))&&mes.equals(String.valueOf(ganancia.getMes()))){
                 filtradas.add(ganancia);
             }

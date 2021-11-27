@@ -1,10 +1,16 @@
 package web;
 
 import datos.CompraDaoJDBC;
+import datos.GananciaDaoJDBC;
 import datos.ProductoDaoJDBC;
 import dominio.Compra;
+import dominio.Ganancia;
 import dominio.Producto;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -90,6 +96,31 @@ public class ServletControladorCompra extends HttpServlet {
         //Insertamos el nuevo objeto en la base de datos
         int registrosModificados = new CompraDaoJDBC().insertar(compra);
         System.out.println("registrosModificados = " + registrosModificados);
+        
+        // ACTUALIZAR GANANCIA
+        List<Ganancia> ganancias = new GananciaDaoJDBC().listarGanancias();
+        
+        Date date = new Date();
+        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy");
+        SimpleDateFormat formatter2 = new SimpleDateFormat("MM");
+        
+        String y = formatter1.format(date);
+        String m = formatter2.format(date);
+        
+        int year = Integer.parseInt(y);
+        int mes = Integer.parseInt(m);
+        
+        Boolean flag = false;
+        for (Ganancia ganancia : ganancias){
+            if(year==ganancia.getYear()&&mes==ganancia.getMes()){
+                new GananciaDaoJDBC().actualizarGanancia(new Ganancia(ganancia.getIdGanancia(), ganancia.getMes(), ganancia.getYear(), ganancia.getInvertido() + costo_total, ganancia.getGanado()));
+                flag = true;
+                break;
+            }
+        }
+        
+        if (!flag) 
+            new GananciaDaoJDBC().insertarGanancia(new Ganancia(mes, year, costo_total, 0));
         
         //Redirigimos hacia accion RetornarPaginaCompra
         this.accionInsertado(request, response);
