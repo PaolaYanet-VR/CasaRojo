@@ -54,8 +54,8 @@ public class ServletControladorGanancia extends HttpServlet {
     private void accionDefault(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Ganancia> ganancias = new GananciaDaoJDBC().listarGanancias();
         List<Ganancia> filtradas = new ArrayList<>();
-        String year = "2021";
-        String mes = "1";
+        String year = request.getParameter("year");
+        String mes = request.getParameter("mes");
         
         for (Ganancia ganancia : ganancias){
             if(year.equals(String.valueOf(ganancia.getYear()))&&mes.equals(String.valueOf(ganancia.getMes()))){
