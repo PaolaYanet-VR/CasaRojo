@@ -8,8 +8,6 @@ import dominio.Ganancia;
 import dominio.Producto;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletException;
