@@ -16,11 +16,11 @@
             </div><br>
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col form-group">
                         <label style="font-size: 25px" for="cantidad">Cantidad</label><br>
                         <input type="number" maxlength="7" class="form-control" name="cantidad" required step="any">
                     </div>
-                    <div class="col">
+                    <div class="col form-group">
                         <label style="font-size: 25px" for="costo">Precio</label><br>
                         <input type="number" maxlength="7" class="form-control" name="costo" required step="any">
                     </div>
